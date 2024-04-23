@@ -6,7 +6,7 @@ class Tamagotchi {
     }
 }
 
-// const myTamagotchi = new Tamagotchi("Alice", "Jimmie")
+const myTamagotchi = new Tamagotchi("Alice", "Jimmie")
 
 // console.log(myTamagotchi.name);
 // console.log(myTamagotchi.owner);
