@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
     <title>Document</title>
 </head>
 
@@ -14,11 +13,19 @@
         src="https://res.cloudinary.com/teepublic/image/private/s--80EeIjI7--/c_crop,x_10,y_10/c_fit,h_1109/c_crop,g_north_west,h_1260,w_1260,x_-128,y_-76/co_rgb:000000,e_colorize,u_Misc:One%20Pixel%20Gray/c_scale,g_north_west,h_1260,w_1260/fl_layer_apply,g_north_west,x_-128,y_-76/bo_157px_solid_white/e_overlay,fl_layer_apply,h_1260,l_Misc:Art%20Print%20Bumpmap,w_1260/e_shadow,x_6,y_6/c_limit,h_1254,w_1254/c_lpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_auto:good:420,w_630/v1550072795/production/designs/4195413_0.jpg"
         alt="Tamagotchi Image">
 
-    <div>Hunger: <span id="hunger-value">0</span></div>
-    <div>Sleepiness: <span id="sleepiness-value">0</span></div>
-    <div>Boredom: <span id="boredom-value">0</span></div>
-    <div>Age: <span id="age-value">0</span> days</div>
+    <div>
+        <p>Name: <span id="tamagotchi-name"></span></p>
+        <p>Hunger: <span id="hungerValue">8</span></p>
+        <p>Sleepiness: <span id="sleepinessValue">8</span></p>
+        <p>Boredom: <span id="boredomValue">8</span></p>
+        <p>Age: <span id="ageValue">0</span></p>
+    </div>
 
+    <button id="feedPetButton">Feed Pet</button>
+    <button id="turnOffLightsButton">Turn Off Lights</button>
+    <button id="playWithPetButton">Play With Pet</button>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
