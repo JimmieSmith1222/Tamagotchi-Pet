@@ -5,14 +5,25 @@
 }
 
 #second-age-tama {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 
 #third-age-tama {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
 }
+
+@keyframes movePet {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(50%, 0); }
+    100% { transform: translate(0, 0); }
+  }
+  
+  #tamagotchi-image, #second-age-tama, #third-age-tama {
+    animation: movePet 15s linear infinite;
+    position: relative;
+  }
 
 body {
     background-color: rgb(8, 137, 244);

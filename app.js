@@ -100,11 +100,18 @@ setInterval(updateBoredom, 4000);
 
 let gameOver = false;
 
-const checkPetStatus = () => {
+const stopPetAnimation = () => {
+    document.getElementById("tamagotchi-image").style.animationPlayState = "paused";
+    document.getElementById("second-age-tama").style.animationPlayState = "paused";
+    document.getElementById("third-age-tama").style.animationPlayState = "paused";
+  };
+  
+  checkPetStatus = () => {
     if (!gameOver && (myTamagotchi.hunger >= 10 || myTamagotchi.sleepiness >= 10 || myTamagotchi.boredom >= 10)) {
-        gameOver = true;
-        if (confirm("Nooooooo! Good thing you can try again huh?")) {
-            document.location.reload();
-        }
+      gameOver = true;
+      stopPetAnimation();
+      if (confirm("Nooooooo! Good thing you can try again huh?")) {
+        document.location.reload();
+      }
     }
-};
+  };
