@@ -3,9 +3,9 @@ class Tamagotchi {
         this.name = name;
         this.owner = owner;
         this.mood = "Brave";
-        this.hunger = 8;
-        this.sleepiness = 8;
-        this.boredom = 8;
+        this.hunger = 0;
+        this.sleepiness = 0;
+        this.boredom = 0;
         this.age = 0;
     }
 
@@ -59,6 +59,17 @@ playWithPetButton.addEventListener("click", () => {
 const updateAge = () => {
     myTamagotchi.age += 1;
     document.getElementById("ageValue").textContent = myTamagotchi.age;
+    if (myTamagotchi.age === 5) {
+        document.getElementById("tamagotchi-image").style.display = "none";
+        document.getElementById("second-age-tama").style.display = "block";
+    }
+    if (myTamagotchi.age === 8) {
+        document.getElementById("tamagotchi-image").style.display = "none";
+        document.getElementById("second-age-tama").style.display = "none";
+        document.getElementById("third-age-tama").style.display = "block";
+    }
+
+    checkPetStatus();
 };
 
 setInterval(updateAge, 10000);
@@ -66,6 +77,7 @@ setInterval(updateAge, 10000);
 const updateHunger = () => {
     myTamagotchi.hunger += 1;
     document.getElementById("hungerValue").textContent = myTamagotchi.hunger;
+    checkPetStatus();
 };
 
 setInterval(updateHunger, 5000);
@@ -73,6 +85,7 @@ setInterval(updateHunger, 5000);
 const updateSleepiness = () => {
     myTamagotchi.sleepiness += 1;
     document.getElementById("sleepinessValue").textContent = myTamagotchi.sleepiness;
+    checkPetStatus();
 };
 
 setInterval(updateSleepiness, 7000);
@@ -80,6 +93,18 @@ setInterval(updateSleepiness, 7000);
 const updateBoredom = () => {
     myTamagotchi.boredom += 1;
     document.getElementById("boredomValue").textContent = myTamagotchi.boredom;
+    checkPetStatus();
 };
 
 setInterval(updateBoredom, 4000);
+
+let gameOver = false;
+
+const checkPetStatus = () => {
+    if (!gameOver && (myTamagotchi.hunger >= 10 || myTamagotchi.sleepiness >= 10 || myTamagotchi.boredom >= 10)) {
+        gameOver = true;
+        if (confirm("Nooooooo! Good thing you can try again huh?")) {
+            document.location.reload();
+        }
+    }
+};

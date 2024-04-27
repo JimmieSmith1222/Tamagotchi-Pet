@@ -4,6 +4,16 @@
     border-radius: 50%;
 }
 
+#second-age-tama {
+    width: 100px;
+    height: 100px;
+}
+
+#third-age-tama {
+    width: 100px;
+    height: 100px;
+}
+
 body {
     background-color: rgb(8, 137, 244);
 }
