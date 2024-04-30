@@ -57,22 +57,24 @@ playWithPetButton.addEventListener("click", () => {
 });
 
 const updateAge = () => {
-    myTamagotchi.age += 1;
-    document.getElementById("ageValue").textContent = myTamagotchi.age;
-    if (myTamagotchi.age === 5) {
-        document.getElementById("tamagotchi-image").style.display = "none";
-        document.getElementById("second-age-tama").style.display = "block";
-    }
-    if (myTamagotchi.age === 8) {
-        document.getElementById("tamagotchi-image").style.display = "none";
-        document.getElementById("second-age-tama").style.display = "none";
-        document.getElementById("third-age-tama").style.display = "block";
-    }
+    if (!gameOver) {
+        myTamagotchi.age += 1;
+        document.getElementById("ageValue").textContent = myTamagotchi.age;
+        if (myTamagotchi.age === 5) {
+            document.getElementById("tamagotchi-image").style.display = "none";
+            document.getElementById("second-age-tama").style.display = "block";
+        }
+        if (myTamagotchi.age === 8) {
+            document.getElementById("tamagotchi-image").style.display = "none";
+            document.getElementById("second-age-tama").style.display = "none";
+            document.getElementById("third-age-tama").style.display = "block";
+        }
 
-    checkPetStatus();
+        checkPetStatus();
+    }
 };
 
-setInterval(updateAge, 10000);
+setInterval(updateAge, 8000);
 
 const updateHunger = () => {
     if (!gameOver) {
