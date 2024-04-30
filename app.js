@@ -116,14 +116,14 @@ const stopPetAnimation = () => {
     document.getElementById("tamagotchi-image").style.animationPlayState = "paused";
     document.getElementById("second-age-tama").style.animationPlayState = "paused";
     document.getElementById("third-age-tama").style.animationPlayState = "paused";
-  };
-  
-  checkPetStatus = () => {
+};
+
+checkPetStatus = () => {
     if (!gameOver && (myTamagotchi.hunger >= 10 || myTamagotchi.sleepiness >= 10 || myTamagotchi.boredom >= 10)) {
-      gameOver = true;
-      stopPetAnimation();
-      if (confirm("Nooooooo! Good thing you can try again huh?")) {
-        document.location.reload();
-      }
+        gameOver = true;
+        stopPetAnimation();
+        if (confirm("Nooooooo! Good thing you can try again huh?")) {
+            document.location.reload();
+        }
     }
-  };
+};
