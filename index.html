@@ -9,15 +9,17 @@
 </head>
 
 <body>
-    <img id="tamagotchi-image" src="./images/dragon-egg.png" alt="Tamagotchi Image" id="tamagotchi-image">
+    <div id="tama-container">
+        <img id="tamagotchi-image" src="./images/dragon-egg.png" alt="Tamagotchi Image" id="tamagotchi-image">
 
-    <img id="second-age-tama" src="./images/baby-dragon.webp" style="display:none;" alt="second age tama"
-       id="second-age-tama">
+        <img id="second-age-tama" src="./images/baby-dragon.webp" style="display:none;" alt="second age tama"
+            id="second-age-tama">
 
-    <img id="third-age-tama" src="./images/adult-dragon.png" style="display:none;" alt="Morphed Tamagotchi 2"
-        id="third-age-tama">
+        <img id="third-age-tama" src="./images/adult-dragon.png" style="display:none;" alt="Morphed Tamagotchi 2"
+            id="third-age-tama">
+    </div>
 
-    <div>
+    <div id="stats">
         <p>Name: <span id="tamagotchi-name"></span></p>
         <p>Hunger: <span id="hungerValue">0</span></p>
         <p>Sleepiness: <span id="sleepinessValue">0</span></p>
@@ -25,9 +27,11 @@
         <p>Age: <span id="ageValue">0</span></p>
     </div>
 
-    <button id="feedPetButton">Feed Pet</button>
-    <button id="turnOffLightsButton">Turn Off Lights</button>
-    <button id="playWithPetButton">Play With Pet</button>
+    <div id="buttons">
+        <button id="feedPetButton">Feed Pet</button>
+        <button id="turnOffLightsButton">Turn Off Lights</button>
+        <button id="playWithPetButton">Play With Pet</button>
+    </div>
 
     <script src="app.js"></script>
 </body>

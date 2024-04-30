@@ -1,3 +1,25 @@
+body {
+    background-color: rgb(8, 137, 244);
+    background-image: url('./images/tamabackdrop.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+}
+
+#tamagotchi-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
 #tamagotchi-image {
     width: 100px;
     height: 100px;
@@ -7,24 +29,40 @@
 #second-age-tama {
     width: 200px;
     height: 200px;
+    animation: movePet 15s linear infinite;
+    position: relative;
 }
 
 #third-age-tama {
     width: 300px;
     height: 300px;
+    animation: movePet 15s linear infinite;
+    position: relative;
 }
 
 @keyframes movePet {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(50%, 0); }
-    100% { transform: translate(0, 0); }
-  }
-  
-  #tamagotchi-image, #second-age-tama, #third-age-tama {
-    animation: movePet 15s linear infinite;
-    position: relative;
-  }
+    0% {
+        transform: translate(0, 0);
+    }
 
-body {
-    background-color: rgb(8, 137, 244);
+    50% {
+        transform: translate(50%, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+#buttons {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#stats {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: rgb(0, 220, 254);
 }

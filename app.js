@@ -75,28 +75,38 @@ const updateAge = () => {
 setInterval(updateAge, 10000);
 
 const updateHunger = () => {
-    myTamagotchi.hunger += 1;
-    document.getElementById("hungerValue").textContent = myTamagotchi.hunger;
-    checkPetStatus();
+    if (!gameOver) {
+        myTamagotchi.hunger += 1;
+        document.getElementById("hungerValue").textContent = myTamagotchi.hunger;
+        checkPetStatus();
+    } else {
+        clearInterval(updateHungerInterval);
+    }
 };
-
-setInterval(updateHunger, 5000);
 
 const updateSleepiness = () => {
-    myTamagotchi.sleepiness += 1;
-    document.getElementById("sleepinessValue").textContent = myTamagotchi.sleepiness;
-    checkPetStatus();
+    if (!gameOver) {
+        myTamagotchi.sleepiness += 1;
+        document.getElementById("sleepinessValue").textContent = myTamagotchi.sleepiness;
+        checkPetStatus();
+    } else {
+        clearInterval(updateSleepinessInterval);
+    }
 };
-
-setInterval(updateSleepiness, 7000);
 
 const updateBoredom = () => {
-    myTamagotchi.boredom += 1;
-    document.getElementById("boredomValue").textContent = myTamagotchi.boredom;
-    checkPetStatus();
+    if (!gameOver) {
+        myTamagotchi.boredom += 1;
+        document.getElementById("boredomValue").textContent = myTamagotchi.boredom;
+        checkPetStatus();
+    } else {
+        clearInterval(updateBoredomInterval);
+    }
 };
 
-setInterval(updateBoredom, 4000);
+const updateHungerInterval = setInterval(updateHunger, 5000);
+const updateSleepinessInterval = setInterval(updateSleepiness, 7000);
+const updateBoredomInterval = setInterval(updateBoredom, 4000);
 
 let gameOver = false;
 
@@ -115,4 +125,3 @@ const stopPetAnimation = () => {
       }
     }
   };
-  
